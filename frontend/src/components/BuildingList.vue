@@ -38,4 +38,9 @@ export default {
 </script>
 
 <style scoped>
+.building-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>

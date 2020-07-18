@@ -27,4 +27,14 @@ export default {
 </script>
 
 <style>
+.card {
+  margin: 10px;
+  width: min-content;
+  padding: 20px 20px 0;
+  display: grid;
+  grid-template: repeat(3, auto) / 300px 300px 150px;
+  grid-gap: 20px 0;
+  justify-items: left;
+  background: #f0f0f0;
+}
 </style>

@@ -3,47 +3,57 @@
     <form @submit.prevent="handleSubmit(onSubmit)">
       <p>{{ $t('street') }}</p>
       <ValidationProvider
+          tag="div"
+          class="field"
           :name="$t('street')"
           rules="required|max:255"
           v-slot="{ errors }">
         <input v-model="building.street" type="text" />
-        <span>{{ errors[0] }}</span>
+        <div>{{ errors[0] }}</div>
       </ValidationProvider>
 
       <p>{{ $t('number') }}</p>
       <ValidationProvider
+          tag="div"
+          class="field"
           :name="$t('number')"
           rules="required|max:255"
           v-slot="{ errors }">
         <input v-model="building.number" type="text" />
-        <span>{{ errors[0] }}</span>
+        <div>{{ errors[0] }}</div>
       </ValidationProvider>
 
       <p>{{ $t('floors') }}</p>
       <ValidationProvider
+          tag="div"
+          class="field"
           :name="$t('floors')"
           rules="required|min_value:1"
           v-slot="{ errors }">
         <input v-model="building.floors" type="number" />
-        <span>{{ errors[0] }}</span>
+        <div>{{ errors[0] }}</div>
       </ValidationProvider>
 
       <p>{{ $t('space') }}</p>
       <ValidationProvider
+          tag="div"
+          class="field"
           :name="$t('space')"
           rules="required|min_value:0"
           v-slot="{ errors }">
         <input v-model="building.space" type="number" step="0.1" />
-        <span>{{ errors[0] }}</span>
+        <div>{{ errors[0] }}</div>
       </ValidationProvider>
 
       <p>{{ $t('buildDate') }}</p>
       <ValidationProvider
+          tag="div"
+          class="field"
           :name="$t('buildDate')"
           rules="required"
           v-slot="{ errors }">
         <input v-model="building.build_date" type="date" />
-        <span>{{ errors[0] }}</span>
+        <div>{{ errors[0] }}</div>
       </ValidationProvider>
 
       <button @click="cancel">{{ $t('cancel') }}</button>
@@ -104,5 +114,11 @@
 </script>
 
 <style scoped>
+.field {
+  margin-bottom: 20px;
+}
+button {
+  margin: 10px;
+}
 </style>
 
