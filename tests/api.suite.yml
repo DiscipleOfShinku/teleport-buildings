@@ -1,0 +1,17 @@
+class_name: apiTester
+modules:
+    enabled:
+        - Db:
+            dsn: 'mysql:host=localhost;dbname=teleport_buildings_tests'
+            user: 'teleport_buildings'
+            password: 'teleport_buildings'
+            dump: 'tests/_data/dump.sql'
+            populate: true
+            cleanup: false
+            populator: 'mysql -u $user -h $host $dbname < $dump'
+        - Yii2:
+            configFile: '../config/test.php'
+            transaction: false
+        - REST:
+            depends: Yii2
+            part: Json

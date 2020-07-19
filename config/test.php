@@ -22,7 +22,8 @@ return [
             'basePath' => __DIR__ . '/../web/assets',
         ],
         'urlManager' => [
-            'showScriptName' => true,
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
         ],
         'user' => [
             'identityClass' => 'yii\web\User',
@@ -30,12 +31,9 @@ return [
         'request' => [
             'cookieValidationKey' => 'test',
             'enableCsrfValidation' => false,
-            // but if you absolutely need it set cookie domain to localhost
-            /*
-            'csrfCookie' => [
-                'domain' => 'localhost',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
             ],
-            */
         ],
     ],
     'params' => $params,
